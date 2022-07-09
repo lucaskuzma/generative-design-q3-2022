@@ -2,7 +2,7 @@ function setup() {
   createCanvas(400, 400);
   background(200);
   
-  let greeting = 'He' + 'llo';
+  let greeting = 'Hello';
   let x = 24;
   let y = 96;
   y = y + 100;
