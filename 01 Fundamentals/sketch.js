@@ -1,15 +1,22 @@
-let x = 10;
-let y = 10;
+let s = 'string';
+// let i = '5'; // oops
+let i = 5;
+let v = createVector(24, 96);
+let o = {};
 
-function setup() {
-    createCanvas(300, 200);
-    background(100);
-    fill(100);
+class Person {
+  constructor(name, height) {
+    this.name = name;
+    this.height = height;
+  }
+	grow(amount) {
+      this.height += amount;
+  }
 }
+let bob = new Person('bob', 4);
 
-function draw() {
-    square(x, y, 20);
-    x += 4;
-    x %= width;
-    y = (y + 1) % height;
-}
+s = s + i;
+// s = s * i; // oops
+// s = s + v; // uh oh
+// v = v * 5; // nope
+v.mult(5);
