@@ -10,7 +10,7 @@ function setup() {
     for(let x=0; x<countX; x++) {
         for(let y=0; y<countY; y++) {
             push();
-            
+
             translate(x * size, y * size);
             
             translate(size / 2, size / 2);
@@ -18,7 +18,7 @@ function setup() {
             translate(-size / 2, -size / 2);
 
             square(0, 0, size);
-            square(0, 0, size / 4);
+            square(0, 0, size / 2);
             
             pop();
         }
