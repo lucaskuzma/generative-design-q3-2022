@@ -9,9 +9,9 @@ function setup() {
     strokeWeight(0.25); // skinny lines
 }
 
-function draw() {    
+function draw() {
     line(x1, y1, x2, y2);
-    
+
     x2 = (x2 + 1) % width;
     y1 = (y1 + 1) % height;
     y2 = (y2 + 1.2) % height;

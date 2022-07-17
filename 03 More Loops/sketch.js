@@ -10,12 +10,12 @@ function setup() {
 
 function draw() {
     fill(f);
-    
+
     circle(x, y, 70);
 
     x = (x * 2) % width;
     y = (y + 8) % height;
-    
+
     f += 3;
     f = f % 255;
 }
