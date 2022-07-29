@@ -19,9 +19,11 @@ function draw() {
         push();
         translate(0, y);
         rotateY(frameCount + y);
+        push();
         translate(100, 0);
         box(10, 10, 10);
-        translate(-200, 0);
+        pop();
+        translate(-100, 0);
         box(10, 10, 10);
         pop();
     }
