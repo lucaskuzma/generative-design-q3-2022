@@ -14,7 +14,7 @@ function draw() {
     rotate(frameCount * 2);
 
     specularMaterial(100 + sin(frameCount) * 100, 100, 100);
-    shininess(1x0);
+    shininess(10);
 
     box(60, 30, 10);
 }
