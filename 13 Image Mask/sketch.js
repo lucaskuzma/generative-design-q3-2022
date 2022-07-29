@@ -11,20 +11,18 @@ function setup() {
 }
 
 function draw() {
-    for (let s = 0; s < 5; s++) {
-        let x = random(img.width);
-        let y = random(img.height);
-        let w = width / 4;
-        let h = height / 4;
-        imgCopy = img.get(x, y, w, h);
+    let x = random(img.width);
+    let y = random(img.height);
+    let w = width / 4;
+    let h = height / 4;
+    imgCopy = img.get(x, y, w, h);
 
-        let mask = randomMask(4, w, h);
-        imgCopy.mask(mask);
+    let mask = randomMask(4, w, h);
+    imgCopy.mask(mask);
 
-        let px = random(width);
-        let py = random(height);
-        image(imgCopy, px, py);
-    }
+    let px = random(width);
+    let py = random(height);
+    image(imgCopy, px, py);
 }
 
 function randomMask(vertextCount, w, h) {
