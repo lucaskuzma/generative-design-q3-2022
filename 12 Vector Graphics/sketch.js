@@ -1,9 +1,10 @@
 function setup() {
     createCanvas(540, 540, SVG);
     angleMode(DEGREES);
+}
 
-    render(2);
-    // save('m2.svg');
+function draw() {
+    render(floor(mouseX / 20));
 }
 
 function render(multiplier) {
@@ -26,4 +27,23 @@ function render(multiplier) {
     }
     endShape();
     pop();
+}
+
+function keyPressed() {
+    // spacebar
+    if (keyCode == 32) {
+        var now =
+            year() +
+            '-' +
+            month() +
+            '-' +
+            day() +
+            '-' +
+            hour() +
+            '-' +
+            minute() +
+            '-' +
+            second();
+        save(now);
+    }
 }
