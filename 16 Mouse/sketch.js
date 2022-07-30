@@ -1,4 +1,4 @@
-let down = false;
+let down = false; // see also mouseIsPressed!
 
 function setup() {
     createCanvas(400, 400);
