@@ -22,7 +22,7 @@ var bgColor = 255;
 let gui;
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(400, 400, SVG);
     rectMode(CENTER);
     angleMode(DEGREES);
 
@@ -57,5 +57,24 @@ function draw() {
             rect(0, 0, w, h);
             pop();
         }
+    }
+}
+
+function keyPressed() {
+    // spacebar
+    if (keyCode == 32) {
+        var now =
+            year() +
+            '-' +
+            month() +
+            '-' +
+            day() +
+            '-' +
+            hour() +
+            '-' +
+            minute() +
+            '-' +
+            second();
+        save(now);
     }
 }
