@@ -15,6 +15,9 @@ var scaleDownMin = 0.1;
 var scaleDownMax = 1.0;
 var scaleDownStep = 0.01;
 
+var spinX = 0;
+var spinY = 0;
+
 var bgColor = 255;
 let gui;
 
@@ -33,6 +36,8 @@ function setup() {
         'stepDown',
         'scaleAcross',
         'scaleDown',
+        'spinX',
+        'spinY',
         'bgColor'
     );
 }
@@ -46,7 +51,11 @@ function draw() {
             let y = j * stepDown;
             let w = rectWidth * Math.pow(scaleAcross, i);
             let h = rectHeight * Math.pow(scaleDown, j);
-            rect(x, y, w, h);
+            push();
+            translate(x, y);
+            rotate(i * spinX + j * spinY);
+            rect(0, 0, w, h);
+            pop();
         }
     }
 }
