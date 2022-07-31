@@ -5,11 +5,20 @@ let patternSize = 40;
 function setup() {
     createCanvas(canvasSize, canvasSize);
     drawPattern();
+    angleMode(DEGREES);
 }
 
 function draw() {
-    translate(random(canvasSize), random(canvasSize));
-    rotate(random(TWO_PI));
+    let x = random(canvasSize);
+    let y = random(canvasSize);
+    x = quantize(x, patternSize);
+    y = quantize(y, patternSize);
+    translate(x, y);
+
+    let angle = random(360);
+    angle = quantize(angle, 90);
+    rotate(angle);
+
     image(pattern, 0, 0);
 }
 
@@ -25,4 +34,8 @@ function drawPattern() {
             random(patternSize / 4)
         );
     }
+}
+
+function quantize(value, step) {
+    return floor(value / step) * step;
 }
