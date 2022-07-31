@@ -24,7 +24,7 @@ function draw() {
 
 function drawPattern() {
     pattern = createGraphics(patternSize, patternSize);
-    pattern.background(60);
+    pattern.background(random(100));
     pattern.noStroke();
     for (let i = 0; i < 10; i++) {
         fill(random(255));
@@ -38,4 +38,11 @@ function drawPattern() {
 
 function quantize(value, step) {
     return floor(value / step) * step;
+}
+
+function keyPressed() {
+    // spacebar
+    if (keyCode == 32) {
+        drawPattern();
+    }
 }
