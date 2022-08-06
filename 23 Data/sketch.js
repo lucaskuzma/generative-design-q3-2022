@@ -5,8 +5,8 @@ function setup() {
   createCanvas(canvasSize, canvasSize);
   loadData();
   noLoop();
-  drawBarGraph();
-  drawRadarGraph();
+  angleMode(DEGREES);
+  drawPieGraph();
 }
 
 function keyTyped() {
@@ -15,9 +15,32 @@ function keyTyped() {
     drawBarGraph();
   } else if (key === "r") {
     drawRadarGraph();
+  } else if (key === "p") {
+    drawPieGraph();
   }
+
   // uncomment to prevent any default behavior
   return false;
+}
+
+function drawPieGraph() {
+  push();
+  stroke(255);
+  translate(canvasSize / 2, canvasSize / 2);
+  table.rows.forEach(drawPie);
+  pop();
+}
+
+function drawPie(row, i) {
+  let anlgeStep = 360 / table.rows.length;
+  let temperature = row.get(1);
+  let temperatureAsColor = map(temperature, 0, 100, 0, 255);
+  let rainfall = row.get(2);
+  let rainAsColor = map(rainfall, 0, 100, 0, 255);
+  fill(temperatureAsColor, rainAsColor, 100);
+  rotate(anlgeStep);
+  strokeWeight(1);
+  arc(0, 0, canvasSize / 2, canvasSize / 2, 0, anlgeStep, PIE);
 }
 
 function drawRadarGraph() {
