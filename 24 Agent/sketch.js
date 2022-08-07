@@ -12,6 +12,8 @@ class Agent {
     }
 
     update() {
+        this.avoid();
+
         this.x += this.vx;
         this.y += this.vy;
 
@@ -20,6 +22,20 @@ class Agent {
 
         if (this.x > canvasSize) this.vx = -this.vx;
         if (this.y > canvasSize) this.vy = -this.vy;
+    }
+
+    avoid() {
+        let threshold = 20;
+        for (let a = 0; a < agentCount; a++) {
+            let other = agents[a];
+            if (
+                dist(this.x, this.y, other.x, other.y) != 0 &&
+                dist(this.x, this.y, other.x, other.y) < threshold
+            ) {
+                this.vx = random(4) - 2;
+                this.vy = random(4) - 2;
+            }
+        }
     }
 
     draw() {
