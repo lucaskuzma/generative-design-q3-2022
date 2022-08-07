@@ -17,6 +17,10 @@ class Agent {
         this.x += this.vx;
         this.y += this.vy;
 
+        this.constrain();
+    }
+
+    constrain() {
         if (this.x < 0) this.vx = -this.vx;
         if (this.y < 0) this.vy = -this.vy;
 

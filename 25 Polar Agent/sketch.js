@@ -17,6 +17,10 @@ class Agent {
         this.x += this.v * cos(this.θ);
         this.y += this.v * sin(this.θ);
 
+        this.constrain();
+    }
+
+    constrain() {
         if (
             this.x < 0 ||
             this.y < 0 ||
